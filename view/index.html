@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Loja de carros</title>
+</head>
+<body>
+    <header id="header">
+        <nav id="nav">
+            <img src="../images/LOGO.png" alt="logo" id="logo">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <li><a href="">HOME</a></li>
+                <li><a href="#page2">ESTOQUE</a></li>
+                <li><a href="#page4">SOBRE</a></li>
+                <li><a href="#clientes1">CONTATO</a></li>
+                <li><a href="G3-AGENDAMENTO.html" target="_blank">AGENDAMENTO</a></li>
+            </ul>
+            <button id="login">LOGIN</button>
+        </nav>
+    </header>
+    <div class="progress-bar" id="myBar"></div>
+    <section id="homepage">
+
+    </section>
+    <section>
+
+    </section>
+    <script>
+        const btnMobile = document.getElementById('btn-mobile');
+        function toggleMenu(event) {
+        if (event.type === 'touchstart') event.preventDefault();
+        const nav = document.getElementById('nav');
+        nav.classList.toggle('active');
+        const active = nav.classList.contains('active');
+        event.currentTarget.setAttribute('aria-expanded', active);
+        if (active) {
+            event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+        } else {
+            event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+        }
+        }
+
+        btnMobile.addEventListener('click', toggleMenu);
+        btnMobile.addEventListener('touchstart', toggleMenu);
+
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("nav").style.top = "0";
+            document.getElementById("myBar").style.top = "0";
+        } else {
+            document.getElementById("nav").style.top = "-65px";
+            document.getElementById("myBar").style.top = "-70px";
+        }
+        prevScrollpos = currentScrollPos;
+        }
+        
+    </script>
+</body>
+</html>

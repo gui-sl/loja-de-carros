@@ -8,7 +8,7 @@ var currentScrollPos = window.pageYOffset;
     document.getElementById("nav").style.top = "0";
     document.getElementById("menu").style.top = "65px";
   } else {
-    document.getElementById("nav").style.top = "-65px";
+    document.getElementById("nav").style.top = "-75px";
     document.getElementById("menu").style.top = "-300px";
   }
   prevScrollpos = currentScrollPos;
@@ -16,10 +16,10 @@ var currentScrollPos = window.pageYOffset;
 
 links.forEach((link) => {
   link.addEventListener('click', toggleMenu);
-  link.addEventListener('touchstart', toggleMenu);
 })
 
 function toggleMenu(event) {
+  
   if (event.type === 'touchstart') event.preventDefault();
   const nav = document.getElementById('nav');
   nav.classList.toggle('active');
@@ -37,11 +37,10 @@ btnMobile.addEventListener('touchstart', toggleMenu);
 
 // remover navbar ao descer e adicionar navbar ao subir
 
-
-var slideshowDuration = 3000;
+var slideshowDuration = 3500;
 var slideshow=$('.main-content .slideshow');
 
-var slideshowDuration = 3000;
+var slideshowDuration = 3500;
 var slideshow=$('.main-content .slideshow');
 
 function slideshowSwitch(slideshow,index,auto){

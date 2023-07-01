@@ -2,6 +2,7 @@
 <html lang="pt-br" >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.5, maximum-scale=5, minimum-scale=1.0">
   <title>Loja de carros</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet'><link rel="stylesheet" href="../style/style.css">
@@ -10,18 +11,20 @@
 <body>
   <header id="header">
     <nav id="nav">
+      <div class="container">
         <img src="../images/LOGO.png" alt="logo" id="logo">
         <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
             <span id="hamburger"></span>
         </button>
         <ul id="menu" role="menu">
             <li><a href="#header" class="link">HOME</a></li>
-            <li><a href="#" class="link">ESTOQUE</a></li>
-            <li><a href="#" class="link">SOBRE</a></li>
+            <li><a href="#page2" class="link">ESTOQUE</a></li>
+            <li><a href="#page3" class="link">SOBRE</a></li>
             <li><a href="#" class="link">CONTATO</a></li>
             <li><a href="#" class="link">AGENDAMENTO</a></li>
         </ul>
         <button id="login">LOGIN</button>
+      </div>
     </nav>
   </header>
   <main class="main-content">
@@ -148,10 +151,57 @@
     </section>
   </main>
 
-  <section id="page2">
+  <div class="content-container">
+    <section id="page2">
+      
+      <div class="service-container">
+        <div class="service">
+          <div class="service-number">
+            <p>01</p>
+            <hr>
+          </div>
+          <div class="service-card">
+              <h1>VARIEDADE DE CARROS</h1>
+              <p>At our car shop, we are committed to <br> providing our customers with exceptional<br>  service and competitive pricing.</p>
+          </div>
+        </div>
 
-  </section>
+        <div class="service">
+          <div class="service-number">
+            <p>02</p>
+            <hr>
+          </div>
+          <div class="service-card">
+            <h1>COMPRA E VENDA</h1>
+            <p>At our car shop, we are committed to <br> providing our customers with exceptional<br>  service and competitive pricing.</p>
+          </div>
+        </div>
 
+        <div class="service">
+          <div class="service-number">
+            <p>03</p>
+            <hr>
+          </div>
+          <div class="service-card">
+            <h1>SUPORTE 24 HORAS</h1>
+            <p>At our car shop, we are committed to <br> providing our customers with exceptional<br>  service and competitive pricing.</p>
+          </div>
+        </div>
+      </div>
+      <div class="offer">
+        <div class="offer-text">
+          <small>CLÁSSICOS</small>
+            <h1>DESCUBRA UM NOVO <br> NIVEL DE CONFORTO</h1>
+            <p>We're here to make the car-buying process as easy and stress-<br>free  as possible. Contact us today to schedule a test drive or to <br> learn more about our financing and service options.</p>
+            <button id="offer-button">Descobrir Mais</button>
+        </div>
+        <img src="../images/RIBELLE2.jpg" alt="" id="offer-image">
+      </div>
+    </section>
+    <section id="page3">
+    
+    </section>
+  </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script><script  src="../js/script.js"></script>

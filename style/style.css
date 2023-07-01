@@ -8,28 +8,36 @@
   scroll-behavior: smooth;
 }
 
-body{
-  background-color: #0d0c16;
-}
-
 body::-webkit-scrollbar {
   display: none;
+}
+
+body{
+  background-color: #090814;
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
 }
 
 nav {
   width: 100%;
   height: 65px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: fixed;
   z-index: 10;
-  background: rgba(14, 14, 14, 0.336);
+  background-color: #060a1d59;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: #09081400;
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 0 5%;    
-  transition: top 0.3s;
+  -webkit-backdrop-filter: blur(20px); 
+  transition: top .5s;
 }
 
 #menu {
@@ -52,7 +60,7 @@ nav {
 
 #logo{
   width: 150px;
-  height: 80%;
+  height: 50px;
 }
 
 #login{
@@ -77,80 +85,6 @@ nav {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
-}
-
-@media (max-width: 992px) {
-  #menu {
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: 65px;
-    left: 0px;
-    background: rgba(14, 14, 14, 0.336);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    transition: 0.6s;
-    z-index: 1000;
-    height: 0px;
-    visibility: hidden;
-    overflow-x: hidden;
-    overflow-y: scroll;
-  }
-  #menu::-webkit-scrollbar {
-      display: none;
-  }
-  nav{
-    justify-content: space-between;
-    padding: 0 3%;
-  }
-
-  #nav.active #menu {
-    height: 310px;
-    visibility: visible;
-    overflow-y: auto;
-  }
-  #menu a {
-    padding: 1rem 0;
-    margin: 0 3%;
-    border-bottom: 2px solid #e7e7e7;
-  }
-  #btn-mobile {
-    display: flex;
-    font-size: 1rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    gap: 0.5rem;
-  }
-  #hamburger {
-    border-top: 2px solid #e7e7e7;
-    width: 30px;
-  }
-  #hamburger::after,
-  #hamburger::before {
-    content: '';
-    display: block;
-    width: 30px;
-    height: 2px;
-    background: #e7e7e7;
-    margin-top: 5px;
-    transition: 0.3s;
-    position: relative;
-  }
-  #nav.active #hamburger {
-    border-top-color: transparent;
-  }
-  #nav.active #hamburger::before {
-    transform: rotate(135deg);
-  }
-  #nav.active #hamburger::after {
-    transform: rotate(-135deg);
-    top: -7px;
-  }
-  #login{
-      display: none;
-  }
 }
 
 body {
@@ -299,7 +233,7 @@ body {
   margin: 15px 0px;
   max-width: 1000px;
   font: 300 50px/1.2 "Oswald", sans-serif;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.6em;
   text-transform: uppercase;
 }
 .slideshow .slide .text {
@@ -387,7 +321,287 @@ body {
   transition: left 0.2s ease;
 }
 
-section{
+.content-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content-container section{
   width: 100%;
   height: 100vh;
+  max-width: 1600px;
+}
+
+#page2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.service-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  height: fit-content;
+  margin: 80px 20px;
+}
+
+.service{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 32%;
+  min-width: 200px;
+}
+
+.service-number{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #f1f1f1;
+  transition: ease .3s;
+}
+
+hr{
+  width: 93%;
+  border: 1px solid rgb(255, 255, 255);
+  transition: ease .3s;
+}
+
+.service-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  padding: 10px;
+  width: 100%;
+  height: 250px;
+  background-color: #090814;
+  color: #f1f1f1;
+  border: 1px solid #f1f1f1;
+  transition: ease .3s;
+}
+
+.service:hover .service-card{
+  border: 1px solid #bdb331;
+} 
+
+.service:hover .service-number{
+  color: #bdb331;
+}
+
+.service:hover hr{
+border: 1px solid #bdb331;
+}
+
+.service-card h1{
+  font-size: 1.36vw;
+  min-width: 20px;
+}
+
+.service-card p{
+  font-size: 1.1vw;
+  text-align: center;
+}
+
+.offer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: fit-content; 
+  margin-bottom: 80px;
+  border: 1px solid white;
+}
+
+.offer-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: start;
+  white-space: nowrap;
+  padding-left: 5%;
+  width: 45%;
+  color: #f1f1f1;
+  height: 500px;
+}
+
+.offer-text h1{
+  font-size: 35px;
+  line-height: 45px;
+}
+
+#offer-image{
+  width: 50%;
+  height: 500px;
+  border-left: 1px solid #f1f1f1;
+}
+
+#offer-button{
+  margin-top: 25px;
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  width: 180px;
+  height: 45px;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+#page3{
+  display: flex;
+  flex-direction: column;
+  background-color: green;
+}
+
+@media (min-width: 0) and (max-width: 600px){
+
+  .offer-text{
+    height: 350px;
+  }
+
+  .offer-text h1{
+    font-size: 32px;
+    line-height: 45px;
+  }
+  .offer-text p{
+    font-size: 10px;
+    line-height: 20px;
+  }
+  .slideshow .slide .title {
+    margin: 15px 10px;
+    margin-left: 25px;
+    max-width: 1000px;
+    font: 300 30px/1.2 "Oswald", sans-serif;
+
+    text-transform: uppercase;
+  }
+  .slideshow .slide .text {
+    margin: 0 auto;
+    max-width: 1000px;
+    font-size: 18px;
+    line-height: 0.4;
+    letter-spacing: 10px;
+  }
+  
+}
+
+@media (max-width: 992px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 65px;
+    left: 0px;
+    background-color: #060a1def;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  #menu::-webkit-scrollbar {
+      display: none;
+  }
+  nav{
+    justify-content: space-between;
+  }
+
+  #nav.active #menu {
+    height: 310px;
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 3%;
+    border-bottom: 2px solid #e7e7e7;
+  }
+  #btn-mobile {
+    display: flex;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+  #hamburger {
+    border-top: 3px solid #e7e7e7;
+    width: 35px;
+  }
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 3px;
+    background: #e7e7e7;
+    margin-top: 9px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(130deg);
+    background-color: red;
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-130deg);
+    background-color: red;
+    top: -12px;
+  }
+  #login{
+      display: none;
+  }
+  .service-container{
+    flex-direction: column;
+  }
+  .service{  
+    width: 100%;
+  }
+  .service-card p{
+    font-size: 15px;
+    text-align: center;
+  }
+  .service-card h1{
+    font-size: 18px;
+    text-align: center;
+  }
+  .offer{
+    width: 100%;
+    flex-direction: column;
+  }
+  .offer-text{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+  #offer-image{
+    margin-top: 20px;
+    width: 100%;
+    height: 30%;
+  }
+}
+
+
+@media (max-width: 1610px) {
+  .content-container section{
+    padding: 3%;
+  }
+  nav{
+    padding: 0 3%;
+  }
 }

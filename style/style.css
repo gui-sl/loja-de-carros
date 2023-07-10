@@ -16,12 +16,17 @@ body{
   background-color: #090814;
 }
 
+button{
+  cursor: pointer;
+}
+
 .container{
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1600px;
+  margin: 0 3%;
 }
 
 nav {
@@ -326,6 +331,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 0 3%;
 }
 
 .content-container section{
@@ -384,7 +390,7 @@ hr{
   cursor: default;
   padding: 10px;
   width: 100%;
-  height: 250px;
+  height: fit-content;
   background-color: #090814;
   color: #f1f1f1;
   border: 1px solid #f1f1f1;
@@ -460,7 +466,58 @@ border: 1px solid #bdb331;
 #page3{
   display: flex;
   flex-direction: column;
-  background-color: green;
+  color: #f1f1f1;
+}
+
+#page3 h1{
+  font-size: 40px;
+  color: #f1f1f1;
+  padding: 0;
+  margin: 0;
+}
+
+#page3 h5{
+  margin-top: 2%;
+}
+
+.wrapper{
+  width: 100%;
+}
+
+.wrapper .carousel{
+  display: grid;
+  justify-content: flex-start;
+  align-items: flex-start;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel .card{
+  scroll-snap-align: start;
+  width: 100%;
+  height: 600px;
+  border: 1px solid white;
+}
+.carousel.no-transition{
+  scroll-behavior: auto;
+}
+.carousel::-webkit-scrollbar{
+  display: none;
+}
+
+.card img{
+  width: 50%;
+}
+
+.buttons button{
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
 }
 
 @media (min-width: 0) and (max-width: 600px){
@@ -492,7 +549,6 @@ border: 1px solid #bdb331;
     line-height: 0.4;
     letter-spacing: 10px;
   }
-  
 }
 
 @media (max-width: 992px) {
@@ -594,14 +650,9 @@ border: 1px solid #bdb331;
     width: 100%;
     height: 30%;
   }
+  .wrapper .carousel{
+    grid-auto-columns: 100%;
+  }
 }
 
 
-@media (max-width: 1610px) {
-  .content-container section{
-    padding: 3%;
-  }
-  nav{
-    padding: 0 3%;
-  }
-}

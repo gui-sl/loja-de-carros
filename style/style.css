@@ -8,6 +8,22 @@
   scroll-behavior: smooth;
 }
 
+:root{
+  --primary-color: rgb(255, 255, 255);
+  --secondary-color: rgb(0, 0, 0);
+  --terciary-color: rgb(211, 211, 211);
+  --gradient-1: #bbbbbb;
+  --gradient-2: #ececec;
+}
+  
+.darktheme{
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgb(255, 255, 255);
+  --terciary-color: rgb(15, 15, 15);
+  --gradient-1: #080509;
+  --gradient-2: #1a171c;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -29,6 +45,10 @@ button{
   margin: 0 3%;
 }
 
+header{
+  transition: ease .5s;
+}
+
 nav {
   width: 100%;
   height: 65px;
@@ -42,7 +62,7 @@ nav {
   color: #09081400;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px); 
-  transition: top .5s;
+  transition: ease .5s;
 }
 
 #menu {
@@ -336,7 +356,8 @@ body {
 
 .content-container section{
   width: 100%;
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   max-width: 1600px;
 }
 
@@ -435,7 +456,6 @@ border: 1px solid #bdb331;
   justify-content: center;
   align-items: start;
   text-align: start;
-  white-space: nowrap;
   padding-left: 5%;
   width: 45%;
   color: #f1f1f1;
@@ -466,6 +486,7 @@ border: 1px solid #bdb331;
 #page3{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   color: #f1f1f1;
 }
 
@@ -474,10 +495,6 @@ border: 1px solid #bdb331;
   color: #f1f1f1;
   padding: 0;
   margin: 0;
-}
-
-#page3 h5{
-  margin-top: 2%;
 }
 
 .wrapper{
@@ -490,14 +507,18 @@ border: 1px solid #bdb331;
   align-items: flex-start;
   grid-auto-flow: column;
   grid-auto-columns: 100%;
-  gap: 16px;
+  gap: 15px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
 }
 
+.card{
+  display: flex;
+}
+
 .carousel .card{
   scroll-snap-align: start;
-  width: 100%;
+  width: 99%;
   height: 600px;
   border: 1px solid white;
 }
@@ -509,46 +530,64 @@ border: 1px solid #bdb331;
 }
 
 .card img{
-  width: 50%;
+  width: 60%;
+  height: 100%;
+}
+
+.buttons{
+  height: 70px;
+  cursor: default;
 }
 
 .buttons button{
   width: 50px;
   height: 50px;
+  padding-bottom: 5px;
   margin-top: 20px;
   background-color: transparent;
   border: 1px solid #f1f1f1;
+  color: #f1f1f1;
+  font-size: 25px;
+  transition: ease .3s;
 }
 
-@media (min-width: 0) and (max-width: 600px){
+.i:hover{
+  width: 60px;
+  height: 60px;
+  background-color: #f1f1f1;
+  color: #000;
+}
 
-  .offer-text{
-    height: 350px;
-  }
+.informations{
+  width: 100%;
+  height: 100%;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 
-  .offer-text h1{
-    font-size: 32px;
-    line-height: 45px;
-  }
-  .offer-text p{
-    font-size: 10px;
-    line-height: 20px;
-  }
-  .slideshow .slide .title {
-    margin: 15px 10px;
-    margin-left: 25px;
-    max-width: 1000px;
-    font: 300 30px/1.2 "Oswald", sans-serif;
+.info1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    text-transform: uppercase;
-  }
-  .slideshow .slide .text {
-    margin: 0 auto;
-    max-width: 1000px;
-    font-size: 18px;
-    line-height: 0.4;
-    letter-spacing: 10px;
-  }
+#more{
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  width: 160px;
+  height: 50px; 
+  color: #f1f1f1;
+}
+
+#page4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #f1f1f1;
 }
 
 @media (max-width: 992px) {
@@ -558,7 +597,7 @@ border: 1px solid #bdb331;
     width: 100%;
     top: 65px;
     left: 0px;
-    background-color: #060a1def;
+    background-color: #060a1d;
     transition: 0.6s;
     z-index: 1000;
     height: 0px;
@@ -574,7 +613,7 @@ border: 1px solid #bdb331;
   }
 
   #nav.active #menu {
-    height: 310px;
+    height: 100vh;
     visibility: visible;
     overflow-y: auto;
   }
@@ -653,6 +692,58 @@ border: 1px solid #bdb331;
   .wrapper .carousel{
     grid-auto-columns: 100%;
   }
+  .carousel .card{
+    flex-direction: column;
+    height: fit-content;
+  }
+  .card img{
+    width: 100%;
+    height: 400px;
+  }
+  #page3 h1{
+    font-size: 25px;
+  }
 }
+
+
+@media (min-width: 0) and (max-width: 600px){
+  .offer-text{
+    height: 350px;
+  }
+
+  .offer-text h1{
+    font-size: 7.5vw;
+    line-height: 35px;
+  }
+  .offer-text p{
+    font-size: 15px;
+    line-height: 20px;
+    padding: 0 25px;
+  }
+  .slideshow .slide .title {
+    margin: 15px 10px;
+    margin-left: 25px;
+    max-width: 1000px;
+    font: 300 30px/1.2 "Oswald", sans-serif;
+
+    text-transform: uppercase;
+  }
+  .slideshow .slide .text {
+    margin: 0 auto;
+    max-width: 1000px;
+    font-size: 18px;
+    line-height: 0.4;
+    letter-spacing: 10px;
+  }
+  .card img{
+    width: 100%;
+    height: 250px;
+  }
+  .informations{
+    padding: 10px;
+  }
+}
+
+
 
 

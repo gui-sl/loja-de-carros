@@ -35,7 +35,7 @@ const infiniteScroll = () => {
 
 carousel.addEventListener("scroll", infiniteScroll);
 
-
+//remover e adicionar navbar ao descer ou subir a página
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
@@ -44,7 +44,7 @@ var currentScrollPos = window.pageYOffset;
     document.getElementById("menu").style.top = "65px";
   } else {
     document.getElementById("nav").style.top = "-75px";
-    document.getElementById("menu").style.top = "-300px";
+    document.getElementById("menu").style.top = "-100vh";
   }
   prevScrollpos = currentScrollPos;
 }
@@ -61,9 +61,11 @@ function toggleMenu(event) {
   const active = nav.classList.contains('active');
   event.currentTarget.setAttribute('aria-expanded', active);
   if (active) {
-      event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+    document.getElementById("nav").style.backgroundColor = "#060a1d";
+    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
   } else {
-      event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+    document.getElementById("nav").style.backgroundColor = "#060a1d59";
+    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
   }
 }
 

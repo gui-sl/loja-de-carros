@@ -5,6 +5,17 @@ const arrowsbtn = document.querySelectorAll(".i");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;
 const carouselChildrens = [...carousel.children];
 
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
 let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
 carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
@@ -37,6 +48,8 @@ carousel.addEventListener("scroll", infiniteScroll);
 
 //remover e adicionar navbar ao descer ou subir a página
 var prevScrollpos = window.pageYOffset;
+location.reload
+
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
